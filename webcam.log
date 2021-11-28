@@ -1,0 +1,879 @@
+INFO:root:faces: 1 at 2021-09-17 12:57:09.116738
+INFO:root:faces: 2 at 2021-09-17 12:57:14.621051
+INFO:root:faces: 1 at 2021-09-17 12:57:14.762378
+ERROR:django.request:Internal Server Error: /user/api/register/student/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\user_app\api\views.py", line 102, in post
+    msg = render_to_string('activate.html', {
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\loaders\base.py", line 29, in get_template
+    return Template(
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\defaulttags.py", line 531, in autoescape
+    nodelist = parser.parse(('endautoescape',))
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\template\base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'trans', expected 'endautoescape'. Did you forget to register or load this tag?
+INFO:root:faces: 1 at 2021-09-17 13:31:20.326185
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Bad Request: /user/api/login/student/
+WARNING:django.request:Not Found: /img/icon-addlink.svg
+WARNING:django.request:Not Found: /img/icon-changelink.svg
+WARNING:django.request:Not Found: /img/icon-deletelink.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/tooltag-add.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/icon-addlink.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/icon-addlink.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/tooltag-add.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/sorting-icons.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/sorting-icons.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/tooltag-add.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/icon-addlink.svg
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Not Found: /img/hero-bg.png
+WARNING:django.request:Not Found: /img/hero-bg.png
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Bad Request: /user/api/login/student/
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Bad Request: /user/api/login/lecturer/
+WARNING:django.request:Bad Request: /user/api/login/lecturer/
+WARNING:django.request:Bad Request: /user/api/login/lecturer/
+WARNING:django.request:Not Found: /img/icon-addlink.svg
+WARNING:django.request:Not Found: /img/icon-changelink.svg
+WARNING:django.request:Not Found: /img/icon-deletelink.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/icon-addlink.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/sorting-icons.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/tooltag-add.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/icon-addlink.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/tooltag-add.svg
+WARNING:django.request:Not Found: /admin/facial_app/img/sorting-icons.svg
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Bad Request: /user/api/login/lecturer/
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Bad Request: /user/api/login/lecturer/
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Bad Request: /user/api/login/student/
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\user_app\api\serializers.py changed, reloading.
+INFO:root:faces: 1 at 2021-09-17 14:38:59.004370
+INFO:root:faces: 2 at 2021-09-17 14:39:02.753762
+INFO:root:faces: 1 at 2021-09-17 14:39:02.895674
+INFO:root:faces: 2 at 2021-09-17 14:39:10.459016
+INFO:root:faces: 1 at 2021-09-17 14:39:10.580941
+INFO:root:faces: 0 at 2021-09-17 14:39:10.704864
+INFO:root:faces: 1 at 2021-09-17 14:39:10.813798
+INFO:root:faces: 0 at 2021-09-17 14:39:11.046653
+INFO:root:faces: 1 at 2021-09-17 14:39:11.671269
+INFO:root:faces: 0 at 2021-09-17 14:39:14.033814
+INFO:root:faces: 1 at 2021-09-17 14:39:14.649435
+INFO:root:faces: 0 at 2021-09-17 14:39:15.210094
+INFO:root:faces: 1 at 2021-09-17 14:39:16.228463
+WARNING:django.request:Not Found: /user/api/img/hero-bg.png
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Bad Request: /user/api/login/student/
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\user_app\api\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /user/api/register/student/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\user_app\api\views.py", line 110, in post
+    res = send_mail(
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\__init__.py", line 61, in send_mail
+    return mail.send()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 62, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\socket.py", line 822, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\video_capture.py changed, reloading.
+INFO:root:faces: 1 at 2021-09-23 17:05:14.034357
+INFO:root:faces: 0 at 2021-09-23 17:05:14.303191
+INFO:root:faces: 1 at 2021-09-23 17:05:14.390138
+INFO:root:faces: 0 at 2021-09-23 17:05:14.480083
+INFO:root:faces: 1 at 2021-09-23 17:05:14.654974
+INFO:root:faces: 0 at 2021-09-23 17:05:14.823871
+INFO:root:faces: 1 at 2021-09-23 17:05:14.917813
+INFO:root:faces: 0 at 2021-09-23 17:05:15.121687
+INFO:root:faces: 1 at 2021-09-23 17:05:15.212632
+INFO:root:faces: 0 at 2021-09-23 17:05:15.907205
+INFO:root:faces: 1 at 2021-09-23 17:05:15.983156
+INFO:root:faces: 0 at 2021-09-23 17:05:16.170040
+INFO:root:faces: 1 at 2021-09-23 17:05:16.265981
+INFO:root:faces: 0 at 2021-09-23 17:05:16.364921
+INFO:root:faces: 1 at 2021-09-23 17:05:16.446870
+INFO:root:faces: 0 at 2021-09-23 17:05:16.533816
+INFO:root:faces: 1 at 2021-09-23 17:05:16.614767
+INFO:root:faces: 0 at 2021-09-23 17:05:17.123454
+INFO:root:faces: 1 at 2021-09-23 17:05:17.212398
+INFO:root:faces: 0 at 2021-09-23 17:05:17.297348
+INFO:root:faces: 1 at 2021-09-23 17:05:18.465627
+INFO:root:faces: 0 at 2021-09-23 17:05:18.550574
+INFO:root:faces: 1 at 2021-09-23 17:05:19.518977
+INFO:root:faces: 0 at 2021-09-23 17:05:20.964088
+INFO:root:faces: 1 at 2021-09-23 17:05:21.124989
+INFO:root:faces: 0 at 2021-09-23 17:05:21.210937
+INFO:root:faces: 1 at 2021-09-23 17:05:22.009444
+INFO:root:faces: 0 at 2021-09-23 17:05:22.174342
+INFO:root:faces: 1 at 2021-09-23 17:05:22.246299
+INFO:root:faces: 0 at 2021-09-23 17:05:22.327249
+INFO:root:faces: 1 at 2021-09-23 17:05:22.574096
+INFO:root:faces: 0 at 2021-09-23 17:05:22.912888
+INFO:root:faces: 1 at 2021-09-23 17:05:25.545266
+INFO:root:faces: 0 at 2021-09-23 17:05:25.697172
+INFO:root:faces: 1 at 2021-09-23 17:05:25.773127
+INFO:root:faces: 0 at 2021-09-23 17:05:25.858074
+INFO:root:faces: 1 at 2021-09-23 17:05:25.937026
+INFO:root:faces: 0 at 2021-09-23 17:05:26.012979
+INFO:root:faces: 1 at 2021-09-23 17:05:26.174878
+INFO:root:faces: 0 at 2021-09-23 17:05:26.253830
+INFO:root:faces: 1 at 2021-09-23 17:05:26.911426
+INFO:root:faces: 0 at 2021-09-23 17:05:27.008367
+INFO:root:faces: 1 at 2021-09-23 17:05:28.120680
+INFO:root:faces: 0 at 2021-09-23 17:05:28.198632
+INFO:root:faces: 1 at 2021-09-23 17:05:28.364530
+INFO:root:faces: 0 at 2021-09-23 17:05:28.450477
+INFO:root:faces: 1 at 2021-09-23 17:05:28.538423
+INFO:root:faces: 0 at 2021-09-23 17:05:28.705320
+INFO:root:faces: 1 at 2021-09-23 17:05:29.225000
+INFO:root:faces: 0 at 2021-09-23 17:05:29.300953
+INFO:root:faces: 1 at 2021-09-23 17:05:29.630750
+INFO:root:faces: 0 at 2021-09-23 17:05:29.859609
+INFO:root:faces: 1 at 2021-09-23 17:05:29.943558
+INFO:root:faces: 0 at 2021-09-23 17:05:30.021510
+INFO:root:faces: 1 at 2021-09-23 17:05:30.176414
+INFO:root:faces: 0 at 2021-09-23 17:05:30.461239
+INFO:root:faces: 1 at 2021-09-23 17:05:30.544189
+INFO:root:faces: 0 at 2021-09-23 17:05:30.634132
+INFO:root:faces: 1 at 2021-09-23 17:05:30.729074
+WARNING:django.request:Bad Request: /user/api/login/student/
+WARNING:django.request:Bad Request: /user/api/login/student/
+WARNING:django.request:Not Found: /media/default.png
+ERROR:django.request:Internal Server Error: /api/attendance_list/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 90, in filter_queryset
+    filterset = self.get_filterset(request, queryset, view)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 31, in get_filterset
+    filterset_class = self.get_filterset_class(view, queryset)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 73, in get_filterset_class
+    class AutoFilterSet(self.filterset_base):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\filterset.py", line 71, in __new__
+    new_class.base_filters = new_class.get_filters()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\filterset.py", line 358, in get_filters
+    raise TypeError(
+TypeError: 'Meta.fields' must not contain non-model field names: student__matric_no
+WARNING:django.request:Not Found: /media/default.png
+ERROR:django.request:Internal Server Error: /api/attendance_list/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 90, in filter_queryset
+    filterset = self.get_filterset(request, queryset, view)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 31, in get_filterset
+    filterset_class = self.get_filterset_class(view, queryset)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 73, in get_filterset_class
+    class AutoFilterSet(self.filterset_base):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\filterset.py", line 71, in __new__
+    new_class.base_filters = new_class.get_filters()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\filterset.py", line 358, in get_filters
+    raise TypeError(
+TypeError: 'Meta.fields' must not contain non-model field names: student__matric_no
+WARNING:django.request:Not Found: /media/default.png
+ERROR:django.request:Internal Server Error: /api/attendance_list/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\generics.py", line 150, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 90, in filter_queryset
+    filterset = self.get_filterset(request, queryset, view)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 31, in get_filterset
+    filterset_class = self.get_filterset_class(view, queryset)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\rest_framework\backends.py", line 73, in get_filterset_class
+    class AutoFilterSet(self.filterset_base):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\filterset.py", line 71, in __new__
+    new_class.base_filters = new_class.get_filters()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django_filters\filterset.py", line 358, in get_filters
+    raise TypeError(
+TypeError: 'Meta.fields' must not contain non-model field names: student__matric_no
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\api\views.py changed, reloading.
+INFO:root:faces: 1 at 2021-09-24 04:33:23.071083
+INFO:root:faces: 0 at 2021-09-24 04:33:23.238980
+INFO:root:faces: 1 at 2021-09-24 04:33:25.361041
+INFO:root:faces: 2 at 2021-09-24 04:33:28.110627
+INFO:root:faces: 1 at 2021-09-24 04:33:28.487901
+INFO:root:faces: 2 at 2021-09-24 04:33:29.681750
+INFO:root:faces: 3 at 2021-09-24 04:33:29.813673
+INFO:root:faces: 1 at 2021-09-24 04:33:29.941591
+INFO:root:faces: 2 at 2021-09-24 04:33:30.742111
+INFO:root:faces: 1 at 2021-09-24 04:33:30.872055
+INFO:root:faces: 2 at 2021-09-24 04:33:30.988984
+INFO:root:faces: 1 at 2021-09-24 04:33:31.231834
+INFO:root:faces: 2 at 2021-09-24 04:33:31.474194
+INFO:root:faces: 1 at 2021-09-24 04:33:31.605115
+INFO:root:faces: 2 at 2021-09-24 04:33:32.307196
+INFO:root:faces: 1 at 2021-09-24 04:33:32.428122
+INFO:root:faces: 2 at 2021-09-24 04:33:32.544057
+INFO:root:faces: 1 at 2021-09-24 04:33:32.671252
+INFO:root:faces: 2 at 2021-09-24 04:33:32.910101
+INFO:root:faces: 1 at 2021-09-24 04:33:33.026030
+INFO:root:faces: 2 at 2021-09-24 04:33:33.142958
+INFO:root:faces: 1 at 2021-09-24 04:33:33.268883
+INFO:root:faces: 2 at 2021-09-24 04:33:33.587690
+INFO:root:faces: 3 at 2021-09-24 04:33:34.588296
+INFO:root:faces: 1 at 2021-09-24 04:33:34.760188
+INFO:root:faces: 2 at 2021-09-24 04:33:34.899291
+INFO:root:faces: 1 at 2021-09-24 04:33:35.015219
+INFO:root:faces: 2 at 2021-09-24 04:33:35.143140
+INFO:root:faces: 1 at 2021-09-24 04:33:35.385999
+INFO:root:faces: 3 at 2021-09-24 04:33:35.623855
+INFO:root:faces: 1 at 2021-09-24 04:33:35.741783
+INFO:root:faces: 2 at 2021-09-24 04:33:36.178546
+INFO:root:faces: 1 at 2021-09-24 04:33:36.778197
+INFO:root:faces: 2 at 2021-09-24 04:33:38.215978
+INFO:root:faces: 1 at 2021-09-24 04:33:38.320913
+INFO:root:faces: 2 at 2021-09-24 04:33:39.145938
+INFO:root:faces: 1 at 2021-09-24 04:33:39.264375
+INFO:root:faces: 2 at 2021-09-24 04:33:39.680627
+INFO:root:faces: 1 at 2021-09-24 04:33:39.779072
+ERROR:django.request:Internal Server Error: /user/api/register/student/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\user_app\api\views.py", line 110, in post
+    res = send_mail(
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\__init__.py", line 61, in send_mail
+    return mail.send()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 62, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+WARNING:django.request:Bad Request: /user/api/register/student/
+INFO:root:faces: 1 at 2021-09-24 04:42:00.362513
+INFO:root:faces: 2 at 2021-09-24 04:42:04.614504
+INFO:root:faces: 1 at 2021-09-24 04:42:04.745426
+ERROR:django.request:Internal Server Error: /user/api/register/student/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\user_app\api\views.py", line 110, in post
+    res = send_mail(
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\__init__.py", line 61, in send_mail
+    return mail.send()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 62, in open
+    self.connection = self.connection_class(self.host, self.port, **connection_params)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\socket.py", line 843, in create_connection
+    raise err
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\socket.py", line 831, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\video_capture.py changed, reloading.
+INFO:root:faces: 1 at 2021-09-24 08:53:57.991118
+INFO:root:faces: 2 at 2021-09-24 08:53:58.820608
+INFO:root:faces: 1 at 2021-09-24 08:53:58.991502
+INFO:root:faces: 2 at 2021-09-24 08:53:59.720055
+INFO:root:faces: 1 at 2021-09-24 08:53:59.875958
+INFO:root:faces: 2 at 2021-09-24 08:54:00.125804
+INFO:root:faces: 1 at 2021-09-24 08:54:00.336675
+INFO:root:faces: 2 at 2021-09-24 08:54:03.646640
+INFO:root:faces: 1 at 2021-09-24 08:54:03.781552
+INFO:root:faces: 2 at 2021-09-24 08:54:04.783937
+INFO:root:faces: 1 at 2021-09-24 08:54:04.958828
+INFO:root:faces: 2 at 2021-09-24 08:54:06.607810
+INFO:root:faces: 1 at 2021-09-24 08:54:06.738730
+WARNING:django.request:Not Found: /user/api/img/hero-bg.png
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /media/default.png
+WARNING:django.request:Not Found: /img/hero-bg.png
+WARNING:django.request:Not Found: /login/img/hero-bg.png
+WARNING:django.request:Not Found: /media/profile_pics/IMG_20200105_130223_390_4_1578227551560.jpg
+WARNING:django.request:Not Found: /media/profile_pics/IMG_20200105_130223_390_4_1578227551560.jpg
+WARNING:django.request:Not Found: /media/profile_pics/IMG_20200105_130223_390_4_1578227551560.jpg
+WARNING:django.request:Not Found: /media/profile_pics/IMG_20200105_130223_390_4_1578227551560.jpg
+WARNING:django.request:Not Found: /media/profile_pics/IMG_20200105_130223_390_4_1578227551560.jpg
+WARNING:django.request:Not Found: /media/profile_pics/IMG_20200105_130223_390_4_1578227551560.jpg
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\views.py changed, reloading.
+INFO:root:faces: 1 at 2021-09-25 12:17:37.542057
+INFO:root:faces: 0 at 2021-09-25 12:17:37.672196
+INFO:root:faces: 1 at 2021-09-25 12:17:39.329303
+INFO:root:faces: 0 at 2021-09-25 12:17:39.443215
+INFO:root:faces: 1 at 2021-09-25 12:17:40.800124
+INFO:root:faces: 0 at 2021-09-25 12:17:40.900354
+INFO:root:faces: 1 at 2021-09-25 12:17:41.518728
+INFO:root:faces: 0 at 2021-09-25 12:17:41.617008
+INFO:root:faces: 1 at 2021-09-25 12:17:41.861501
+INFO:root:faces: 0 at 2021-09-25 12:17:41.975588
+INFO:root:faces: 1 at 2021-09-25 12:17:42.808161
+INFO:root:faces: 0 at 2021-09-25 12:17:42.906456
+INFO:root:faces: 1 at 2021-09-25 12:17:43.151140
+INFO:root:faces: 0 at 2021-09-25 12:17:43.398606
+INFO:root:faces: 1 at 2021-09-25 12:17:43.876258
+INFO:root:faces: 0 at 2021-09-25 12:17:43.968315
+INFO:root:faces: 1 at 2021-09-25 12:17:44.157937
+INFO:root:faces: 0 at 2021-09-25 12:17:44.256233
+INFO:root:faces: 1 at 2021-09-25 12:17:44.451375
+INFO:root:faces: 2 at 2021-09-25 12:17:45.350138
+INFO:root:faces: 1 at 2021-09-25 12:17:45.440393
+INFO:root:faces: 0 at 2021-09-25 12:17:45.966246
+INFO:root:faces: 1 at 2021-09-25 12:17:46.064530
+INFO:root:faces: 2 at 2021-09-25 12:17:46.529524
+INFO:root:faces: 1 at 2021-09-25 12:17:46.615976
+INFO:root:faces: 0 at 2021-09-25 12:17:47.009236
+INFO:root:faces: 1 at 2021-09-25 12:17:47.107057
+INFO:root:faces: 0 at 2021-09-25 12:17:47.206441
+INFO:root:faces: 1 at 2021-09-25 12:17:47.321975
+INFO:root:faces: 0 at 2021-09-25 12:17:47.467455
+INFO:root:faces: 1 at 2021-09-25 12:17:47.565768
+INFO:root:faces: 2 at 2021-09-25 12:17:48.016319
+INFO:root:faces: 1 at 2021-09-25 12:17:48.101171
+INFO:root:faces: 3 at 2021-09-25 12:17:48.706285
+INFO:root:faces: 2 at 2021-09-25 12:17:48.796523
+INFO:root:faces: 1 at 2021-09-25 12:17:48.886820
+INFO:root:faces: 2 at 2021-09-25 12:17:48.977422
+INFO:root:faces: 1 at 2021-09-25 12:17:49.260434
+INFO:root:faces: 0 at 2021-09-25 12:17:49.550702
+INFO:root:faces: 1 at 2021-09-25 12:17:49.999765
+INFO:root:faces: 0 at 2021-09-25 12:17:50.200818
+INFO:root:faces: 1 at 2021-09-25 12:17:50.315090
+INFO:root:faces: 0 at 2021-09-25 12:17:52.453896
+INFO:root:faces: 1 at 2021-09-25 12:17:52.564285
+INFO:root:faces: 2 at 2021-09-25 12:17:53.187179
+INFO:root:faces: 1 at 2021-09-25 12:17:53.301519
+INFO:root:faces: 2 at 2021-09-25 12:17:53.773600
+INFO:root:faces: 0 at 2021-09-25 12:17:53.975312
+INFO:root:faces: 1 at 2021-09-25 12:17:56.348528
+INFO:root:faces: 0 at 2021-09-25 12:17:56.464391
+INFO:root:faces: 1 at 2021-09-25 12:17:57.010757
+INFO:root:faces: 0 at 2021-09-25 12:17:57.225935
+INFO:root:faces: 1 at 2021-09-25 12:17:57.599362
+INFO:root:faces: 2 at 2021-09-25 12:17:57.724182
+INFO:root:faces: 1 at 2021-09-25 12:17:57.963976
+INFO:root:faces: 2 at 2021-09-25 12:17:58.208507
+INFO:root:faces: 1 at 2021-09-25 12:17:58.338758
+INFO:root:faces: 0 at 2021-09-25 12:17:58.716118
+INFO:root:faces: 1 at 2021-09-25 12:17:59.400898
+ERROR:django.request:Internal Server Error: /user/api/register/student/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\user_app\api\views.py", line 110, in post
+    res = send_mail(
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\__init__.py", line 61, in send_mail
+    return mail.send()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 69, in open
+    self.connection.login(self.username, self.password)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 745, in login
+    raise last_exception
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 734, in login
+    (code, resp) = self.auth(
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 657, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Please log in with your web browser and then try again. Learn more at\n5.7.9  https://support.google.com/mail/?p=WebLoginRequired t16sm1065552wmi.33 - gsmtp')
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\views.py changed, reloading.
+INFO:root:faces: 1 at 2021-09-26 16:46:36.438395
+INFO:root:faces: 0 at 2021-09-26 16:46:36.732214
+INFO:root:faces: 1 at 2021-09-26 16:46:36.934088
+INFO:root:faces: 0 at 2021-09-26 16:46:39.044788
+INFO:root:faces: 1 at 2021-09-26 16:46:39.202706
+INFO:root:faces: 2 at 2021-09-26 16:46:39.848307
+INFO:root:faces: 1 at 2021-09-26 16:46:39.998215
+INFO:root:faces: 3 at 2021-09-26 16:46:40.287053
+INFO:root:faces: 2 at 2021-09-26 16:46:40.432964
+INFO:root:faces: 1 at 2021-09-26 16:46:40.575876
+INFO:root:faces: 3 at 2021-09-26 16:46:40.734778
+INFO:root:faces: 2 at 2021-09-26 16:46:40.902674
+INFO:root:faces: 1 at 2021-09-26 16:46:41.185501
+INFO:root:faces: 2 at 2021-09-26 16:46:41.477320
+INFO:root:faces: 1 at 2021-09-26 16:46:42.081947
+INFO:root:faces: 3 at 2021-09-26 16:46:42.392653
+INFO:root:faces: 2 at 2021-09-26 16:46:42.523574
+INFO:root:faces: 0 at 2021-09-26 16:46:42.824388
+INFO:root:faces: 2 at 2021-09-26 16:46:42.978294
+INFO:root:faces: 1 at 2021-09-26 16:46:43.116209
+INFO:root:faces: 2 at 2021-09-26 16:46:43.279107
+INFO:root:faces: 1 at 2021-09-26 16:46:43.413028
+INFO:root:faces: 2 at 2021-09-26 16:46:43.547942
+INFO:root:faces: 1 at 2021-09-26 16:46:43.693852
+INFO:root:faces: 3 at 2021-09-26 16:46:43.976678
+INFO:root:faces: 1 at 2021-09-26 16:46:44.122588
+INFO:root:faces: 2 at 2021-09-26 16:46:44.561318
+INFO:root:faces: 1 at 2021-09-26 16:46:44.837147
+INFO:root:faces: 3 at 2021-09-26 16:46:44.997050
+INFO:root:faces: 2 at 2021-09-26 16:46:45.152955
+INFO:root:faces: 3 at 2021-09-26 16:46:45.289869
+INFO:root:faces: 0 at 2021-09-26 16:46:45.447772
+INFO:root:faces: 1 at 2021-09-26 16:46:45.614668
+INFO:root:faces: 2 at 2021-09-26 16:46:45.773572
+INFO:root:faces: 1 at 2021-09-26 16:46:45.914485
+INFO:root:faces: 2 at 2021-09-26 16:46:46.507135
+INFO:root:faces: 1 at 2021-09-26 16:46:46.666038
+INFO:root:faces: 0 at 2021-09-26 16:46:46.832935
+INFO:root:faces: 1 at 2021-09-26 16:46:46.987840
+INFO:root:faces: 0 at 2021-09-26 16:46:47.277660
+INFO:root:faces: 1 at 2021-09-26 16:46:47.437563
+INFO:root:faces: 2 at 2021-09-26 16:46:47.577476
+INFO:root:faces: 1 at 2021-09-26 16:46:47.722386
+INFO:root:faces: 2 at 2021-09-26 16:46:47.893282
+INFO:root:faces: 1 at 2021-09-26 16:46:48.203091
+INFO:root:faces: 2 at 2021-09-26 16:46:48.617836
+INFO:root:faces: 1 at 2021-09-26 16:46:48.769742
+INFO:root:faces: 2 at 2021-09-26 16:46:49.249446
+INFO:root:faces: 3 at 2021-09-26 16:46:49.398355
+INFO:root:faces: 1 at 2021-09-26 16:46:49.551260
+INFO:root:faces: 2 at 2021-09-26 16:46:50.005981
+INFO:root:faces: 1 at 2021-09-26 16:46:50.143896
+INFO:root:faces: 2 at 2021-09-26 16:46:50.450706
+INFO:root:faces: 1 at 2021-09-26 16:46:50.595617
+INFO:root:faces: 2 at 2021-09-26 16:46:51.324170
+INFO:root:faces: 1 at 2021-09-26 16:46:51.481073
+INFO:root:faces: 2 at 2021-09-26 16:46:52.375521
+INFO:root:faces: 1 at 2021-09-26 16:46:52.513436
+INFO:root:faces: 2 at 2021-09-26 16:46:53.145048
+INFO:root:faces: 1 at 2021-09-26 16:46:53.283962
+INFO:root:faces: 2 at 2021-09-26 16:46:53.447861
+INFO:root:faces: 1 at 2021-09-26 16:46:53.588773
+INFO:root:faces: 2 at 2021-09-26 16:46:53.768662
+INFO:root:faces: 1 at 2021-09-26 16:46:53.930565
+INFO:root:faces: 0 at 2021-09-26 16:46:54.261359
+INFO:root:faces: 1 at 2021-09-26 16:46:54.558176
+INFO:root:faces: 0 at 2021-09-26 16:46:55.010898
+INFO:root:faces: 1 at 2021-09-26 16:46:55.202780
+INFO:root:faces: 0 at 2021-09-26 16:46:55.355686
+INFO:root:faces: 1 at 2021-09-26 16:46:56.097228
+INFO:root:faces: 0 at 2021-09-26 16:46:56.245138
+INFO:root:faces: 1 at 2021-09-26 16:46:56.486502
+INFO:root:faces: 0 at 2021-09-26 16:46:57.545152
+INFO:root:faces: 1 at 2021-09-26 16:46:57.964350
+INFO:root:faces: 0 at 2021-09-26 16:46:58.569344
+INFO:root:faces: 1 at 2021-09-26 16:46:59.180843
+INFO:root:faces: 0 at 2021-09-26 16:46:59.481143
+INFO:root:faces: 2 at 2021-09-26 16:47:01.037592
+INFO:root:faces: 0 at 2021-09-26 16:47:01.149560
+INFO:root:faces: 2 at 2021-09-26 16:47:01.631219
+INFO:root:faces: 1 at 2021-09-26 16:47:01.738833
+INFO:root:faces: 0 at 2021-09-26 16:47:02.554329
+INFO:root:faces: 1 at 2021-09-26 16:47:02.708573
+INFO:root:faces: 0 at 2021-09-26 16:47:02.848710
+INFO:root:faces: 1 at 2021-09-26 16:47:03.145868
+INFO:root:faces: 2 at 2021-09-26 16:47:03.290256
+INFO:root:faces: 1 at 2021-09-26 16:47:03.584737
+INFO:root:faces: 2 at 2021-09-26 16:47:03.727636
+INFO:root:faces: 1 at 2021-09-26 16:47:04.006059
+INFO:root:faces: 2 at 2021-09-26 16:47:04.730389
+INFO:root:faces: 1 at 2021-09-26 16:47:04.843608
+INFO:root:faces: 2 at 2021-09-26 16:47:05.500833
+INFO:root:faces: 1 at 2021-09-26 16:47:06.013510
+INFO:root:faces: 2 at 2021-09-26 16:47:06.388148
+INFO:root:faces: 1 at 2021-09-26 16:47:06.522568
+INFO:root:faces: 3 at 2021-09-26 16:47:06.931449
+INFO:root:faces: 1 at 2021-09-26 16:47:07.047588
+INFO:root:faces: 2 at 2021-09-26 16:47:07.413152
+INFO:root:faces: 1 at 2021-09-26 16:47:07.535395
+INFO:root:faces: 2 at 2021-09-26 16:47:08.190599
+INFO:root:faces: 1 at 2021-09-26 16:47:08.311905
+INFO:root:faces: 2 at 2021-09-26 16:47:08.924318
+INFO:root:faces: 1 at 2021-09-26 16:47:09.181078
+INFO:root:faces: 4 at 2021-09-26 16:47:09.316674
+INFO:root:faces: 2 at 2021-09-26 16:47:09.437751
+INFO:root:faces: 1 at 2021-09-26 16:47:09.556859
+INFO:root:faces: 2 at 2021-09-26 16:47:09.813608
+INFO:root:faces: 1 at 2021-09-26 16:47:09.927847
+INFO:root:faces: 4 at 2021-09-26 16:47:10.175797
+INFO:root:faces: 1 at 2021-09-26 16:47:10.295868
+INFO:root:faces: 3 at 2021-09-26 16:47:10.418087
+INFO:root:faces: 4 at 2021-09-26 16:47:10.562644
+INFO:root:faces: 3 at 2021-09-26 16:47:10.695313
+INFO:root:faces: 1 at 2021-09-26 16:47:10.841561
+INFO:root:faces: 2 at 2021-09-26 16:47:11.132587
+INFO:root:faces: 1 at 2021-09-26 16:47:11.447722
+INFO:root:faces: 2 at 2021-09-26 16:47:11.724096
+INFO:root:faces: 1 at 2021-09-26 16:47:12.066761
+INFO:root:faces: 0 at 2021-09-26 16:47:12.312120
+INFO:root:faces: 1 at 2021-09-26 16:47:12.389206
+INFO:root:faces: 0 at 2021-09-26 16:47:12.996289
+INFO:root:faces: 1 at 2021-09-26 16:47:13.176683
+INFO:root:faces: 0 at 2021-09-26 16:47:13.228783
+INFO:root:faces: 1 at 2021-09-26 16:47:13.318983
+INFO:root:faces: 2 at 2021-09-26 16:47:19.306227
+INFO:root:faces: 1 at 2021-09-26 16:47:19.427859
+INFO:root:faces: 2 at 2021-09-26 16:47:20.843580
+INFO:root:faces: 1 at 2021-09-26 16:47:21.123287
+INFO:root:faces: 2 at 2021-09-26 16:47:22.921376
+INFO:root:faces: 1 at 2021-09-26 16:47:23.067950
+INFO:root:faces: 2 at 2021-09-26 16:47:24.714498
+INFO:root:faces: 1 at 2021-09-26 16:47:24.799681
+INFO:root:faces: 3 at 2021-09-26 16:47:27.674053
+INFO:root:faces: 1 at 2021-09-26 16:47:27.772875
+INFO:root:faces: 0 at 2021-09-26 16:47:28.276658
+INFO:root:faces: 1 at 2021-09-26 16:47:28.485533
+INFO:root:faces: 0 at 2021-09-26 16:47:28.693159
+INFO:root:faces: 1 at 2021-09-26 16:47:28.937182
+INFO:root:faces: 2 at 2021-09-26 16:47:29.061750
+INFO:root:faces: 0 at 2021-09-26 16:47:29.148955
+INFO:root:faces: 1 at 2021-09-26 16:47:31.340375
+WARNING:django.request:Bad Request: /user/api/login/student/
+ERROR:django.request:Internal Server Error: /profile/student/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\user_app\mixin.py", line 17, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 159, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Users\USER\FaceRecognition\facial_app\views.py", line 49, in get_context_data
+    AvgAttendance = (attended/totalAttendance) * 100
+ZeroDivisionError: division by zero
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\views.py changed, reloading.
+INFO:root:faces: 1 at 2021-09-27 17:31:43.000848
+INFO:root:faces: 2 at 2021-09-27 17:31:43.217365
+INFO:root:faces: 1 at 2021-09-27 17:31:43.307096
+ERROR:django.request:Internal Server Error: /api/take_attendance/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\facial_app\api\views.py", line 128, in post
+    self.perform_create(serializer)
+  File "C:\Users\USER\FaceRecognition\facial_app\api\views.py", line 108, in perform_create
+    lecturer = qs.user,
+AttributeError: 'QuerySet' object has no attribute 'user'
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\api\views.py changed, reloading.
+INFO:root:faces: 1 at 2021-09-27 18:08:51.230679
+INFO:root:faces: 0 at 2021-09-27 18:08:51.295461
+INFO:root:faces: 1 at 2021-09-27 18:08:52.005389
+INFO:root:faces: 0 at 2021-09-27 18:08:52.075587
+INFO:root:faces: 1 at 2021-09-27 18:08:53.645457
+INFO:root:faces: 0 at 2021-09-27 18:08:53.745402
+INFO:root:faces: 1 at 2021-09-27 18:08:53.815015
+INFO:root:faces: 0 at 2021-09-27 18:08:53.875138
+INFO:root:faces: 1 at 2021-09-27 18:08:53.930050
+INFO:root:faces: 0 at 2021-09-27 18:08:54.115197
+INFO:root:faces: 1 at 2021-09-27 18:08:54.250179
+INFO:root:faces: 0 at 2021-09-27 18:08:54.680348
+INFO:root:faces: 1 at 2021-09-27 18:08:54.735259
+INFO:root:faces: 0 at 2021-09-27 18:08:54.794982
+INFO:root:faces: 1 at 2021-09-27 18:08:54.925119
+INFO:root:faces: 0 at 2021-09-27 18:08:55.119945
+INFO:root:faces: 1 at 2021-09-27 18:08:55.257362
+INFO:root:faces: 0 at 2021-09-27 18:08:55.520432
+INFO:root:faces: 1 at 2021-09-27 18:08:55.640143
+INFO:root:faces: 0 at 2021-09-27 18:08:55.840421
+INFO:root:faces: 1 at 2021-09-27 18:08:55.965128
+INFO:root:faces: 0 at 2021-09-27 18:08:56.025330
+INFO:root:faces: 1 at 2021-09-27 18:08:56.215519
+INFO:root:faces: 0 at 2021-09-27 18:08:56.295121
+INFO:root:faces: 1 at 2021-09-27 18:08:56.378679
+INFO:root:faces: 0 at 2021-09-27 18:08:57.645210
+INFO:root:faces: 1 at 2021-09-27 18:08:57.850199
+INFO:root:faces: 0 at 2021-09-27 18:08:57.964572
+INFO:root:faces: 1 at 2021-09-27 18:08:58.075076
+INFO:root:faces: 0 at 2021-09-27 18:08:58.165177
+INFO:root:faces: 1 at 2021-09-27 18:08:58.279272
+INFO:root:faces: 0 at 2021-09-27 18:08:58.389920
+INFO:root:faces: 2 at 2021-09-27 18:08:58.495250
+INFO:root:faces: 0 at 2021-09-27 18:08:58.580179
+INFO:root:faces: 1 at 2021-09-27 18:08:58.774988
+INFO:root:faces: 0 at 2021-09-27 18:08:58.844945
+INFO:root:faces: 1 at 2021-09-27 18:08:58.991273
+INFO:root:faces: 0 at 2021-09-27 18:08:59.060143
+INFO:root:faces: 1 at 2021-09-27 18:08:59.260004
+INFO:root:faces: 0 at 2021-09-27 18:08:59.382234
+INFO:root:faces: 1 at 2021-09-27 18:08:59.994888
+INFO:root:faces: 0 at 2021-09-27 18:09:00.144901
+INFO:root:faces: 1 at 2021-09-27 18:09:00.259839
+INFO:root:faces: 2 at 2021-09-27 18:09:00.745322
+INFO:root:faces: 1 at 2021-09-27 18:09:00.830521
+INFO:root:faces: 2 at 2021-09-27 18:09:01.067652
+INFO:root:faces: 1 at 2021-09-27 18:09:01.145436
+INFO:root:faces: 0 at 2021-09-27 18:09:01.927685
+INFO:root:faces: 1 at 2021-09-27 18:09:01.996896
+INFO:root:faces: 0 at 2021-09-27 18:09:03.535102
+INFO:root:faces: 1 at 2021-09-27 18:09:03.695138
+WARNING:django.request:Bad Request: /user/api/register/student/
+WARNING:django.request:Bad Request: /user/api/register/student/
+INFO:root:faces: 1 at 2021-09-27 18:14:34.242579
+INFO:root:faces: 0 at 2021-09-27 18:14:34.292412
+INFO:root:faces: 1 at 2021-09-27 18:14:35.937413
+INFO:root:faces: 0 at 2021-09-27 18:14:36.052416
+INFO:root:faces: 1 at 2021-09-27 18:14:39.442524
+INFO:root:faces: 2 at 2021-09-27 18:14:39.537506
+INFO:root:faces: 1 at 2021-09-27 18:14:39.632650
+INFO:root:faces: 0 at 2021-09-27 18:14:39.722463
+INFO:root:faces: 1 at 2021-09-27 18:14:40.307599
+INFO:root:faces: 2 at 2021-09-27 18:14:40.442483
+INFO:root:faces: 1 at 2021-09-27 18:14:40.567653
+INFO:root:faces: 2 at 2021-09-27 18:14:40.677717
+INFO:root:faces: 1 at 2021-09-27 18:14:40.787519
+INFO:root:faces: 2 at 2021-09-27 18:14:41.014807
+INFO:root:faces: 1 at 2021-09-27 18:14:41.127723
+INFO:root:faces: 0 at 2021-09-27 18:14:41.221837
+INFO:root:faces: 1 at 2021-09-27 18:14:41.407586
+INFO:root:faces: 0 at 2021-09-27 18:14:41.514997
+INFO:root:faces: 1 at 2021-09-27 18:14:41.602457
+INFO:root:faces: 0 at 2021-09-27 18:14:41.902499
+INFO:root:faces: 1 at 2021-09-27 18:14:42.062410
+INFO:root:faces: 0 at 2021-09-27 18:14:42.222139
+INFO:root:faces: 1 at 2021-09-27 18:14:42.312481
+INFO:root:faces: 2 at 2021-09-27 18:14:42.702134
+INFO:root:faces: 1 at 2021-09-27 18:14:42.782541
+INFO:root:faces: 3 at 2021-09-27 18:14:42.877187
+INFO:root:faces: 1 at 2021-09-27 18:14:42.992452
+INFO:root:faces: 0 at 2021-09-27 18:14:43.182136
+INFO:root:faces: 1 at 2021-09-27 18:14:43.277372
+INFO:root:faces: 0 at 2021-09-27 18:14:43.892451
+INFO:root:faces: 1 at 2021-09-27 18:14:43.987139
+INFO:root:faces: 0 at 2021-09-27 18:14:44.077024
+INFO:root:faces: 1 at 2021-09-27 18:14:44.195264
+WARNING:django.request:Bad Request: /api/take_attendance/
+ERROR:django.request:Internal Server Error: /api/take_attendance/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\facial_app\api\views.py", line 129, in post
+    self.perform_create(serializer)
+  File "C:\Users\USER\FaceRecognition\facial_app\api\views.py", line 104, in perform_create
+    names = Recognizer(details)
+  File "C:\Users\USER\FaceRecognition\facial_app\recognizer.py", line 21, in Recognizer
+    img_encoding = face_recognition.face_encodings(img)[0]
+IndexError: list index out of range
+INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\recognizer.py changed, reloading.

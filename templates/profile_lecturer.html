@@ -1,0 +1,206 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block page_title %}Lecturer Profile{% endblock %}
+
+{% block SideBar %}
+<!-- SideBar -->
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">				
+				<a class="sidebar-brand" href="{% url 'facial:home' %}">
+          			<span class="align-middle">Welcome {{ request.user.first_name }}</span>
+        		</a>
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">Menu</li>
+					{% if request.user.is_lecturer %}
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:create_attendance' %}">
+								<i class="align-middle" data-feather="file-plus"></i> <span class="align-middle">Create Attendance</span>
+							</a>
+						</li>
+						<li class="sidebar-item active">
+							<a class="sidebar-link" href="{% url 'facial:profile_lecturer' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+					{% endif %}
+					{% if request.user.is_lecturer %}					
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:view_attendance' %}">
+								<i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Attendance Sheet</span>
+							</a>
+						</li>
+					{% endif %}					
+					{% if request.user.is_student %}
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:take_attendance' %}">
+								<i class="align-middle" data-feather="plus-square"></i> <span class="align-middle">Take Attendance</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:profile_student' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+					{% endif %}					
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'facial:feedback' %}">
+              				<i class="align-middle" data-feather="help-circle"></i> <span class="align-middle">Feedback</span>
+            			</a>
+					</li>
+					<li class="sidebar-item" id="logout-btn">
+						<a class="sidebar-link">
+              				<i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Logout</span>
+            			</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- End SideBar -->
+{% endblock SideBar %}
+
+{% block dashboard %}
+<div class="row">
+	<div class="container">
+    	<div class="main-body">
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">                    
+                    <img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'default.png' %}{% endif %}" alt="lecturer photo" class="rounded-circle" width="150" height="150">                  
+                    <div class="mt-3">
+                      <h4>{{ user.get_full_name }}</h4>
+                      <p class="text-secondary mb-1">Lecturer | {{ user.lecturer.department }}</p>
+                      <p class="text-muted font-size-sm">Faculty of {{ user.lecturer.faculty }}</p>                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><i data-feather="mail"></i> Email</h6>
+                    <span class="text-secondary">{{ user.email }}</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><i data-feather="phone"></i> Phone</h6>
+                    <span class="text-secondary">{{ user.contact }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h6 class="d-flex align-items-center mb-3"><strong>Personal Details</strong></h6>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ user.get_full_name }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ user.email }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Gender</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ user.gender }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Mobile Number</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ user.contact }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Department</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ user.lecturer.department }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <a class="btn btn-info" style="background: #3575d3;" href="{% url 'facial:profile_lecturer_edit' %}"><i data-feather="edit"></i> Edit</a>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </div>
+            <!-- Create Attendance Histrory -->
+              <div class="row gutters-sm">
+                <div class="col">
+                  <div class="card h-100">
+                    <div class="card-body table-responsive">                        
+                        {% if CreatedAttendance.exists %}
+                        <h6 class="d-flex align-items-center mb-3"><strong>Created Attendance History</strong></h6>
+                        <!-- Display Alert Message -->
+                        <div class="container-fluid p-0">
+                          <div id="alertDelete" role="alert">
+                            <p></p>
+                          </div>
+                        </div>
+                        <!-- End Alert Message -->
+                        <table class="table table-hover my-0">
+                          <thead>
+                          <tr>
+                              <th class="d-flex d-xl-table-cell d-md-table-cell" scope="col">S/N</th>
+                              <th class="d-flex d-xl-table-cell d-md-table-cell" scope="col">Title</th>
+                              <th class="d-flex d-xl-table-cell d-md-table-cell" scope="col">Course</th>
+                              <th class="d-flex d-xl-table-cell d-md-table-cell" scope="col">Level</th>
+                              <th class="d-flex d-xl-table-cell d-md-table-cell" scope="col">Department</th>
+                              <th class="d-flex d-xl-table-cell d-md-table-cell" scope="col">Code</th>
+                              <th class="d-flex d-xl-table-cell d-md-table-cell" scope="col">Date</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                                {% for attendance in CreatedAttendance %}                        
+                                      <tr class="cursor-pointer table-row" id="tableRowRemove">
+                                          <th class="d-flex d-xl-table-cell d-md-table-cell" scope="row">{{ forloop.counter }}</th>
+                                          <td class="d-flex d-xl-table-cell d-md-table-cell">{{ attendance.title }}</td>
+                                          <td class="d-flex d-xl-table-cell d-md-table-cell">{{ attendance.course }}</td>
+                                          <td class="d-flex d-xl-table-cell d-md-table-cell">{{ attendance.level }}</td>
+                                          <td class="d-flex d-xl-table-cell d-md-table-cell">{{ attendance.department }}</td>
+                                          <td class="d-flex d-xl-table-cell d-md-table-cell"><span id="span" class="badge bg-success">{{ attendance.code }}</span></td>
+                                          <td class="d-flex d-xl-table-cell d-md-table-cell">{{ attendance.created }}</td>
+                                          <td class="d-flex d-xl-table-cell d-md-table-cell text-danger"><i onclick="removeCreatedAttendance({{ attendance.id }})" data-feather="trash"></i></td>
+                                      </tr> 
+                                  {% empty %}
+                                  <div class="p-4">
+                                      <p>No Attendance Created Yet!</p>    
+                                  </div>                                           
+                              {% endfor %}  
+                          </tbody>
+                        </table>
+                        {% else %}
+                          <p class="d-flex align-items-center mb-3"><strong>No Attendance Created Yet!</strong></p>                        
+                        {% endif %}                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock dashboard %}

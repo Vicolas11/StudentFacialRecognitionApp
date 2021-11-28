@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta content="Facial Attendance Application" name="description">
+  	<meta content="Facial Recognition Student Attendance" name="keywords">
+
+	<title>{% block page_title %}Dashboard{% endblock %}</title>
+
+  	{% include 'links.html' %}
+</head>
+
+<body>
+	<div class="wrapper">		
+		{% block SideBar %}
+		<!-- SideBar -->
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">				
+				<a class="sidebar-brand" href="{% url 'facial:home' %}">
+          			<span class="align-middle">Welcome {{ request.user.first_name }}</span>
+        		</a>
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">Menu</li>
+					{% if request.user.is_lecturer %}
+						<li onclick="changeTitle()" class="sidebar-item active">
+							<a class="sidebar-link" href="{% url 'facial:create_attendance' %}">
+								<i class="align-middle" data-feather="file-plus"></i> <span class="align-middle">Create Attendance</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:profile_lecturer' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+					{% endif %}
+					{% if request.user.is_lecturer %}					
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:view_attendance' %}">
+								<i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Attendance Sheet</span>
+							</a>
+						</li>
+					{% endif %}					
+					{% if request.user.is_student %}
+						<li class="sidebar-item active">
+							<a class="sidebar-link" href="{% url 'facial:take_attendance' %}">
+								<i class="align-middle" data-feather="plus-square"></i> <span class="align-middle">Take Attendance</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:profile_student' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+					{% endif %}					
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'facial:feedback' %}">
+              				<i class="align-middle" data-feather="help-circle"></i> <span class="align-middle">Feedback</span>
+            			</a>
+					</li>
+					<li class="sidebar-item" id="logout-btn">
+						<a class="sidebar-link">
+              				<i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Logout</span>
+            			</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- End SideBar -->
+		{% endblock SideBar %}
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle">
+          			<i class="hamburger align-self-center"></i>
+        		</a>
+				<div class="navbar-collapse collapse">
+					<!-- DropDown Menu -->
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                				<i class="align-middle" data-feather="settings"></i>
+              				</a>
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+								<img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'default.png' %} {% endif %}" class="avatar img-fluid rounded me-1" alt="profile picture" /> <span class="text-dark">{{ user.first_name }} {{ user.last_name }}</span>                				
+              				</a>
+							<div class="dropdown-menu dropdown-menu-end">								
+								{% if request.user.is_lecturer %}
+									<a class="dropdown-item" href="{% url 'facial:create_attendance' %}"><i class="align-middle me-1" data-feather="file-plus"></i> Create Attendance</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="{% url 'facial:view_attendance' %}"><i class="align-middle me-1" data-feather="file-text"></i> Attendance Sheet</a>
+								{% else %}
+									<a class="dropdown-item" href="{% url 'facial:take_attendance' %}"><i class="align-middle me-1" data-feather="plus-square"></i> Take Attendance</a>	
+								{% endif %}
+								{% if user.is_lecturer %}
+									<a class="dropdown-item" href="{% url 'facial:profile_lecturer' %}">
+								{% else %}
+									<a class="dropdown-item" href="{% url 'facial:profile_student' %}">
+								{% endif %}								
+								<i class="align-middle me-1" data-feather="user"></i> Profile
+								</a>						
+								<a class="dropdown-item" href="{% url 'facial:feedback' %}"><i class="align-middle me-1" data-feather="help-circle"></i> Feedback</a>
+								<div class="dropdown-divider"></div>
+								<div onclick="logoutNow()">
+									<a class="dropdown-item" id="logout-btn">Log out</a>
+								</div>								
+							</div>
+						</li>
+					</ul>
+					<!-- End DropDown Menu -->
+				</div>
+			</nav>
+			
+			<main class="content">				
+				<div class="container-fluid p-0">
+					{% if messages %}
+						<div class="row">
+							<div class="col">
+								{% for message in messages %}
+									<div class="alert alert-success bg-success text-white alert-dismissible fade show" role="alert">
+										<div class="d-flex justify-content-between">
+											<p class="p-3">{{ message }}</p>
+											<button type="button" class="close m-2" data-dismiss="alert" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>	
+										</div>											
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					<div class="card">
+						<!-- Spinner Stary -->
+						<div id="ajax-loader" class="text-center" style="background-color: rgba(255,255,255,0.8); position: absolute; padding-top: 50vh; z-index: +100 !important;
+						width: 100%; height:100%; visibility: hidden;">
+							<div class="spinner-border text-primary" role="status">
+							<span class="sr-only"></span>
+							</div>
+						</div>
+						<!-- Spinner End -->
+						{% block dashboard %}{% endblock dashboard %}
+					</div>
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0"><strong>Facial Recognition Attendance System</strong></a></p>
+						</div>
+						<div class="col-6 text-end">
+							<ul class="list-inline">
+								<li class="list-inline-item">&copy; Copyright <span>2021</span> SIWES Project</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	
+	{% include 'scripts.html' %}
+	
+</body>
+
+</html>

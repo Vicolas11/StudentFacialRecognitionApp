@@ -1,0 +1,113 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block page_title %}View Attendance{% endblock %}
+
+{% block SideBar %}
+<!-- SideBar -->
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">				
+				<a class="sidebar-brand" href="{% url 'facial:home' %}">
+          			<span class="align-middle">Welcome {{ request.user.first_name }}</span>
+        		</a>
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">Menu</li>
+					{% if request.user.is_lecturer %}
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:create_attendance' %}">
+								<i class="align-middle" data-feather="file-plus"></i> <span class="align-middle">Create Attendance</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:profile_lecturer' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+            		{% else %}
+            			<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:profile_student' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+					{% endif %}
+					{% if request.user.is_lecturer %}					
+						<li class="sidebar-item active">
+							<a class="sidebar-link" href="{% url 'facial:view_attendance' %}">
+								<i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Attendance Sheet</span>
+							</a>
+						</li>
+					{% endif %}					
+					{% if request.user.is_student %}
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:take_attendance' %}">
+								<i class="align-middle" data-feather="plus-square"></i> <span class="align-middle">Take Attendance</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:profile_student' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+					{% endif %}					
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{% url 'facial:feedback' %}">
+              				<i class="align-middle" data-feather="help-circle"></i> <span class="align-middle">Feedback</span>
+            			</a>
+					</li>
+					<li class="sidebar-item" id="logout-btn">
+						<a class="sidebar-link">
+              				<i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Logout</span>
+            			</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- End SideBar -->
+{% endblock SideBar %}
+
+{% block dashboard %}
+<div class="row">
+	<div class="col d-flex">
+		<div class="card flex-fill">			
+			<div class="card-body">
+				<div id="app" class="container">
+					<h1 class="h3 mb-3"><strong>View Attendance</strong></h1>
+					<!-- <div class="container col-6">
+						<input type="text" v-model="search" class="form-control mt-2 col-md-6" placeholder="Search">
+					</div>					 -->
+					<!-- Attendance Sheet Table -->
+                        <table id="table" class="table table-hover my-0">
+                          <thead>
+                            <tr>
+                              <th>S/N</th>
+                              <th class="d-none d-xl-table-cell">Name</th>
+                              <th class="d-none d-xl-table-cell">Matric No</th>
+                              <th>Department</th>
+                              <th class="d-none d-md-table-cell">Level</th>
+                              <th>Date</th>
+                              <th>Time</th>
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>	
+                            {% for list in GeneralAttendance %}
+                              <tr>
+                                <td class="d-none d-xl-table-cell">{{ forloop.counter }}</td>
+                                <td class="d-none d-xl-table-cell">{{ list.student.get_full_name }}</td>
+                                <td class="d-none d-xl-table-cell">{{ list.matric_no }}</td>
+                                <td class="d-none d-xl-table-cell">{{ list.department }}</td>
+                                <td class="d-none d-md-table-cell">{{ list.level }}</td>
+                                <td class="d-none d-md-table-cell">{{ list.date }}</td>
+                                <td class="d-none d-md-table-cell">{{ list.time }}</td>
+                                <td class="d-none d-md-table-cell">{{ list.present }}</td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                        <!-- End StudentAttendance -->
+				</div>		
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock dashboard %}

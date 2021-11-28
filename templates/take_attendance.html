@@ -1,0 +1,34 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block page_title %}TakeAttendance{% endblock %}
+{% block dashboard %}
+<div class="card mb-2">
+	<form method="post" id="take-attendace-form" class="take-attendace-form">
+        {% csrf_token %}
+        <!-- Display Alert Message -->
+		<div class="container-fluid p-0">
+			<div id="alert" role="alert">
+				<p></p>
+			</div>
+		</div>
+		<!-- End Alert Message -->	
+		<div class="card-body">
+			<div class="row mb-2">
+                <div class="col mb-2">
+                    <h6 class="mb-2"><strong>Take Attendance</strong></h6>
+                    <input type="text" class="form-control p-2" placeholder="Authentication Code" id="code" name="code" required/>
+                </div>
+                <div class="col mt-2 p-2">
+                    <p class="text-secondary">Please enter the code genarated by the lecturer to take Attendance. Note this code could last for 2 - 10 minutes.</p>
+                </div>						
+			</div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary btn-md"><i data-feather="camera"></i> Submit</button>
+                </div>
+            </div>
+		</div>	
+	</form>				
+</div>
+{% endblock dashboard %}

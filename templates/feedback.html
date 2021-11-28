@@ -1,0 +1,105 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block page_title %}Feedback{% endblock %}
+
+{% block SideBar %}
+<!-- SideBar -->
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">				
+				<a class="sidebar-brand" href="{% url 'facial:home' %}">
+          			<span class="align-middle">Welcome {{ request.user.first_name }}</span>
+        		</a>
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">Menu</li>
+					{% if request.user.is_lecturer %}
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:create_attendance' %}">
+								<i class="align-middle" data-feather="file-plus"></i> <span class="align-middle">Create Attendance</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:profile_lecturer' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+					{% endif %}
+					{% if request.user.is_lecturer %}					
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:view_attendance' %}">
+								<i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Attendance Sheet</span>
+							</a>
+						</li>
+					{% endif %}					
+					{% if request.user.is_student %}
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:take_attendance' %}">
+								<i class="align-middle" data-feather="plus-square"></i> <span class="align-middle">Take Attendance</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a class="sidebar-link" href="{% url 'facial:profile_student' %}">					
+								<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+							</a>
+						</li>
+					{% endif %}					
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="{% url 'facial:feedback' %}">
+              				<i class="align-middle" data-feather="help-circle"></i> <span class="align-middle">Feedback</span>
+            			</a>
+					</li>
+					<li class="sidebar-item" id="logout-btn">
+						<a class="sidebar-link">
+              				<i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Logout</span>
+            			</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- End SideBar -->
+{% endblock SideBar %}
+
+{% block dashboard %}
+<div class="card">
+    <div class="card-body">
+        <form method="POST" class="feedback-form" id="feedback-form">
+            {% csrf_token %}
+            <h6 class="d-flex align-items-center mb-3"><strong>Feedback</strong></h6>
+            <!-- Display Messsage -->
+            <div class="col-lg-8 mt-5 mt-lg-0">
+            {% if messages %}
+                {% for message in messages %}
+                <div class="container-fluid p-0">
+                    <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    {{ message }}
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+            <!-- Display Alert Message -->
+            <div class="container-fluid p-0">
+                <div id="alert" role="alert">
+                    <p></p>
+                </div>
+            </div>
+            <!-- End Alert Message -->
+            <div class="row mb-3">
+                <div class="col">
+                    <h6 class="mb-2">Subject</h6>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Title" required/>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6 class="mb-2">Message</h6>
+                    <textarea class="form-control" rows="12" id="message" name="message" placeholder="Message" required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2"><i data-feather="send"></i> Send</button>
+        </form>        
+    </div>
+</div>
+{% endblock dashboard %}

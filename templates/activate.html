@@ -1,0 +1,15 @@
+{% load i18n %}
+{% autoescape off %}
+Hi {{user.first_name}}!
+
+Please click the link below to activate your account.
+
+http://127.0.0.1:8000{% url 'activate' uidb64=uid token=token%}
+
+You can also copy and paste it on your browser.
+
+{% trans "Thanks for signing up!" %}
+
+Sincerely,
+The FaceAttendanceApp Team
+{% endautoescape %}

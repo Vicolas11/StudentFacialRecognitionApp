@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}Home{% endblock %}
+
+{% block content %}
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Facial Recognition Base Attendance</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">A system for recognising students faces precisely to record attendance thereby replacing the traditional way of taking attendance.</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-xs-12">
+                  <div class="text-center text-lg-start">
+                    <a href="{% url 'facial:signup_student' %}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                      <span>Student Signup</span>
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xs-12">
+                <div class="text-center text-lg-start">
+                  <a href="{% url 'facial:signup_lecturer' %}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                    <span>Lecturer Signup</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'img/hero-img.png' %}" class="img-fluid" alt="Hero Image">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+{% endblock content %}

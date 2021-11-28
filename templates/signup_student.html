@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}Student Signup{% endblock %}
+
+{% block content %}
+<div class="main">
+    <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title text-center" style="color: #3575d3; font-weight: bold; padding: 12px 0;">
+                        Student Registration Form</h2>
+                        <form method="POST" class="student-register-form" id="student-register-form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <!-- Display Alert Message -->
+                            <div class="container-fluid p-0">
+                                <div id="alert" role="alert">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <!-- End Alert Message -->
+                            <!-- Another Message -->
+                            {% if messages %}
+                            <div class="row">
+                                <div class="col">
+                                    {% for message in messages %}
+                                        <div class="alert alert-success bg-success text-white alert-dismissible fade show" role="alert">
+                                            <div class="d-flex justify-content-between">
+                                                <p class="p-3">{{ message }}</p>
+                                                <button type="button" class="close m-2" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>	
+                                            </div>											
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+					        {% endif %}
+                            <!-- End Another Message -->
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Full Name</strong></h6>
+                                            <input type="text" class="form-control p-2" placeholder="Vicolas Akoh" name="first_name" id="first_name" required/>
+                                        </div>                
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Date of Birth</strong></h6>
+                                            <input type="date" class="form-control p-2" placeholder="Date of Birth" name="dob" id="dob" required/>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Email</strong></h6>
+                                            <input type="email" class="form-control p-2" placeholder="vicolas@gmail.com" name="email" id="email" required/>
+                                        </div>                
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Password</strong></h6>
+                                            <input type="password" class="form-control p-2" placeholder="**********" name="password" id="password" required/>
+                                            <i onclick="changePasswordToggled('password','togglePassword')" class="far fa-eye" id="togglePassword" style="float: right; cursor: pointer; margin-top: -30px; margin-right: 15px;"></i>
+                                        </div>                
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Confirm Password</strong></h6>
+                                            <input type="password" class="form-control p-2" placeholder="**********" name="compsd" id="compsd" required/>
+                                            <i onclick="changePasswordToggled('compsd','togglePassword1')" class="far fa-eye" id="togglePassword1" style="float: right; cursor: pointer; margin-top: -30px; margin-right: 15px;"></i>
+                                        </div>                
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Phone Number</strong></h6>
+                                            <input type="tel" class="form-control p-2" placeholder="08107874622" name="contact" id="contact" required/>
+                                        </div>                
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Gender</strong></h6>
+                                            <select class="form-select mb-3" name="gender" id="gender">
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                        </div>                
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Department</strong></h6>
+                                            <select class="form-select" name="department" id="department">
+                                                <option>Computer Science</option>
+                                                <option>Mathematics</option>
+                                                <option>Statistics</option>
+                                                <option>Physics</option>
+                                                <option>Chemistry</option>
+                                                <option>Biology</option>
+                                                <option>Political Science</option>
+                                                <option>Economics</option>
+                                                <option>Mass Communication</option>
+                                                <option>History</option>
+                                                <option>English</option>
+                                            </select>
+                                        </div>                
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Level</strong></h6>
+                                            <select class="form-select mb-3" name="level" id="level">
+                                                <option>100</option>
+                                                <option>200</option>
+                                                <option>300</option>
+                                                <option>400</option>
+                                            </select>
+                                        </div>                
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Matriculation Number</strong></h6>
+                                            <input type="text" class="form-control p-2" placeholder="SCI17CSC000" name="matric_no" id="matric_no" required/>
+                                        </div>                
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <h6 class="mb-2"><strong>Semester</strong></h6>
+                                            <select class="form-select mb-3" name="semester" id="semester">
+                                                <option>First</option>
+                                                <option>Second</option>
+                                            </select>
+                                        </div>                
+                                    </div>                                                                       
+                                </div>
+                            </div>
+                            <div class="form-group form-button text-center">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <div class="form-group">
+                                    <p>Have an account already? <b><a href="{% url 'facial:login_student' %}">Login Here</a></b> </p>
+                                </div>
+                            </div>                          
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
+{% endblock content %}

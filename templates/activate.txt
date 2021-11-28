@@ -1,0 +1,17 @@
+{% load i18n %}
+{% autoescape off %}
+Hi {{user.first_name}}!
+
+Please click the link below to activate your account.
+
+{{ request.scheme }}://{{ request.get_host }}{% url 'activate' uidb64=uid token=token%}
+
+{{ link }}
+
+You can also copy and paste it on your browser.
+
+{% trans "Thanks for signing up!" %}
+
+Sincerely,
+The FaceAttendanceApp Team
+{% endautoescape %}

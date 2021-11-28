@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}Lecturer Login{% endblock %}
+
+{% block content %}
+<div class="main">
+    <section class="sign-in">
+        <div class="container">
+            <div class="card border-0 p-2">
+                <div class="card-body">
+                    <h2 class="form-title text-center mb-4" style="font-weight: bold; color: #3575d3;">Login Lecturer</h2>
+                    <form method="POST" class="lecturer-login-form" id="lecturer-login-form">
+                        {% csrf_token %}
+                        <!-- Display Alert Message -->
+                        <div class="container-fluid p-0">
+                            <div id="alert" role="alert">
+                                <p></p>
+                            </div>
+                        </div>
+                        <!-- End Alert Message -->
+                        <div class="row mb-3">
+                            <div class="col">
+                                <h6 class="mb-2"><strong>Username</strong></h6>
+                                <input type="email" autofocus="" autocapitalize="none" autocomplete="email" class="form-control p-2" placeholder="vicolas@email.com" name="email" id="email" required/>
+                            </div>                
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col">
+                                <h6 class="mb-2"><strong>Password</strong></h6>
+                                <input type="password" class="form-control p-2" placeholder="**********" name="password" id="password" required/>
+                                <i onclick="myFunctionToggle()" class="far fa-eye" id="togglePassword" style="float: right; cursor: pointer; margin-top: -30px; margin-right: 15px;"></i>
+                                <p class="mt-2">Forget Password? <b><a href="{% url 'facial:password_reset' %}"><span class="text-danger">Reset</span> </a></b></p>
+                            </div>                
+                        </div>
+                        <div class="form-group form-button justify-content-center text-center mb-2">
+                            <input type="submit" name="signin" id="isgnin" class="form-submit m-0" value="Log in"/>                            
+                        </div>
+                        <div class="form-group text-center">
+                            <p>Don't have an account? <b><a href="{% url 'facial:signup_lecturer' %}">Signup Here</a></b> </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>    
+{% endblock content %}

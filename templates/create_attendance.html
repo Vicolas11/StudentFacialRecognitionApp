@@ -1,0 +1,110 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block page_title %}Create Attendance{% endblock %}
+
+{% block dashboard %}
+
+<div class="row">
+	<div class="col d-flex">
+		<div class="card flex-fill">			
+			<div class="card-body">
+				<form method="POST" id="create-attendace-form">	
+					<h1 class="h3 mt-3 p-0"><strong>Create Attendance</strong></h1>
+					{% csrf_token %}				
+					<div class="row">
+						<!-- Display Alert Message -->
+						<div class="container-fluid p-0">
+							<div id="alert" role="alert">
+								<p></p>
+							</div>
+						</div>
+						<!-- End Alert Message -->					
+						<div class="col-md-6 col-xs-12 mt-3">
+							<div class="row">
+								<div class="col-md-3 mt-2">
+									<label for="level">Title</label>
+								</div>
+								<div class="col-md-9">
+									<input type="text" class="form-control mt-2" placeholder="CSC000 Attedance" id="title" name="title" required/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 mt-2">
+									<label for="level">Department</label>
+								</div>
+								<div class="col-md-9">
+									<select class="form-select mt-2" name="department" id="department">
+										<option>Computer Science</option>
+										<option>Mathematics</option>
+										<option>Statistics</option>
+										<option>Physics</option>
+										<option>Chemistry</option>
+										<option>Biology</option>
+										<option>Political Science</option>
+										<option>Economics</option>
+										<option>Mass Communication</option>
+										<option>History</option>
+										<option>English</option>
+									</select>
+								</div>
+							</div>
+							
+						</div>
+						<div class="col-md-6 col-xs-12 mt-3">
+							<div class="row">
+								<div class="col-md-6 col-xs-12">
+									<div class="row">
+										<div class="col-md-3 mt-2">
+											<label for="level">Level</label>
+										</div>
+										<div class="col-md-9">
+											<select class="form-select mt-2" name="level" id="level" required>
+												<option>100</option>
+												<option>200</option>
+												<option>300</option>
+												<option>400</option>
+											</select>
+										</div>
+									</div>										
+								</div>
+								<div class="col-md-6 col-xs-12">
+									<div class="row">
+										<div class="col-md-7 mt-2">
+											<label for="duration">Duration (Mins)</label>	
+										</div>
+										<div class="col-md-5">
+											<select class="form-select mt-2" name="duration" id="duration" required>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+											</select>	
+										</div>
+									</div>
+								</div>							
+							</div>
+							<div class="row">
+								<div class="col-md-3 mt-2">
+									<label for="level">Course Code</label>
+								</div>
+								<div class="col-md-9">
+									<input type="text" class="form-control mt-2" placeholder="CSC000" name="course" id="course" required/>
+								</div>
+							</div>
+						</div>						
+					</div>
+					<div class="col-md-6 col-xs-12 mt-3">
+						<button type="submit" class="btn btn-primary">Create <i data-feather="plus"></i></button>
+					</div>  
+				</form>				
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock dashboard %}
