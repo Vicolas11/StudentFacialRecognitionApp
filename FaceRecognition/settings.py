@@ -83,25 +83,25 @@ WSGI_APPLICATION = 'FaceRecognition.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-"""
-DATABASES = {
+if DEBUG:
+    DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': env('DB_NAME'), 
-            'USER': env('DB_USER'), 
-            'PASSWORD': env('DB_PWD'),
-            'HOST': 'ec2-54-156-60-12.compute-1.amazonaws.com', 
-            'PORT': '5432',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
-}
-"""
+    }
+else:
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                'NAME': env('DB_NAME'), 
+                'USER': env('DB_USER'), 
+                'PASSWORD': env('DB_PWD'),
+                'HOST': 'ec2-54-156-60-12.compute-1.amazonaws.com', 
+                'PORT': '5432',
+            }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -171,12 +171,15 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Email Services
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com' #'smtp.elasticemail.com'
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')  
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = 587 #2525
-EMAIL_USE_TLS = True  
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com' #'smtp.elasticemail.com'
+    EMAIL_HOST_USER = env('EMAIL_HOST_USER')  
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+    EMAIL_PORT = 587 #2525
+    EMAIL_USE_TLS = True  
 
 # Display Messages
 MESSAGE_TAGS = {

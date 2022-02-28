@@ -877,3 +877,113 @@ Traceback (most recent call last):
     img_encoding = face_recognition.face_encodings(img)[0]
 IndexError: list index out of range
 INFO:django.utils.autoreload:C:\Users\USER\FaceRecognition\facial_app\recognizer.py changed, reloading.
+INFO:root:faces: 2 at 2022-01-04 11:45:44.893208
+INFO:root:faces: 1 at 2022-01-04 11:45:45.083094
+INFO:root:faces: 0 at 2022-01-04 11:45:45.339936
+INFO:root:faces: 1 at 2022-01-04 11:45:45.417886
+INFO:root:faces: 0 at 2022-01-04 11:45:46.600066
+INFO:root:faces: 1 at 2022-01-04 11:45:46.685839
+INFO:root:faces: 0 at 2022-01-04 11:45:47.103578
+INFO:root:faces: 1 at 2022-01-04 11:45:47.189524
+INFO:root:faces: 0 at 2022-01-04 11:45:47.522318
+INFO:root:faces: 1 at 2022-01-04 11:45:47.923046
+INFO:root:faces: 0 at 2022-01-04 11:45:48.001238
+INFO:root:faces: 1 at 2022-01-04 11:45:48.502284
+INFO:root:faces: 0 at 2022-01-04 11:45:48.585086
+INFO:root:faces: 1 at 2022-01-04 11:45:48.813962
+INFO:root:faces: 0 at 2022-01-04 11:45:48.898910
+INFO:root:faces: 1 at 2022-01-04 11:45:49.120775
+INFO:root:faces: 0 at 2022-01-04 11:45:49.351466
+INFO:root:faces: 2 at 2022-01-04 11:45:49.429419
+INFO:root:faces: 1 at 2022-01-04 11:45:49.513390
+INFO:root:faces: 0 at 2022-01-04 11:45:53.034446
+INFO:root:faces: 1 at 2022-01-04 11:45:53.106401
+INFO:root:faces: 2 at 2022-01-04 11:45:53.181355
+INFO:root:faces: 0 at 2022-01-04 11:45:53.245315
+INFO:root:faces: 1 at 2022-01-04 11:45:53.310276
+INFO:root:faces: 2 at 2022-01-04 11:45:53.373236
+INFO:root:faces: 1 at 2022-01-04 11:45:53.436196
+INFO:root:faces: 0 at 2022-01-04 11:45:53.498158
+INFO:root:faces: 1 at 2022-01-04 11:45:53.640070
+INFO:root:faces: 0 at 2022-01-04 11:45:53.718021
+INFO:root:faces: 1 at 2022-01-04 11:45:54.176737
+INFO:root:faces: 0 at 2022-01-04 11:45:54.425581
+INFO:root:faces: 1 at 2022-01-04 11:45:54.507530
+INFO:root:faces: 0 at 2022-01-04 11:45:54.658438
+INFO:root:faces: 1 at 2022-01-04 11:45:56.023588
+INFO:root:faces: 0 at 2022-01-04 11:45:56.852071
+INFO:root:faces: 1 at 2022-01-04 11:45:56.959005
+INFO:root:faces: 0 at 2022-01-04 11:45:57.213847
+INFO:root:faces: 1 at 2022-01-04 11:45:57.358756
+INFO:root:faces: 0 at 2022-01-04 11:45:57.556634
+INFO:root:faces: 1 at 2022-01-04 11:45:58.061320
+INFO:root:faces: 0 at 2022-01-04 11:45:58.215223
+INFO:root:faces: 2 at 2022-01-04 11:45:58.360135
+INFO:root:faces: 0 at 2022-01-04 11:45:58.453076
+INFO:root:faces: 1 at 2022-01-04 11:45:58.643958
+INFO:root:faces: 0 at 2022-01-04 11:45:58.794863
+INFO:root:faces: 1 at 2022-01-04 11:45:59.030972
+INFO:root:faces: 0 at 2022-01-04 11:45:59.358768
+INFO:root:faces: 1 at 2022-01-04 11:45:59.436722
+INFO:root:faces: 0 at 2022-01-04 11:45:59.889438
+INFO:root:faces: 1 at 2022-01-04 11:46:00.047340
+INFO:root:faces: 0 at 2022-01-04 11:46:00.155273
+INFO:root:faces: 1 at 2022-01-04 11:46:00.931790
+INFO:root:faces: 0 at 2022-01-04 11:46:01.045719
+INFO:root:faces: 1 at 2022-01-04 11:46:02.866586
+INFO:root:faces: 0 at 2022-01-04 11:46:02.954532
+INFO:root:faces: 1 at 2022-01-04 11:46:03.042480
+INFO:root:faces: 2 at 2022-01-04 11:46:03.223364
+INFO:root:faces: 1 at 2022-01-04 11:46:03.307312
+INFO:root:faces: 0 at 2022-01-04 11:46:03.525177
+INFO:root:faces: 2 at 2022-01-04 11:46:03.620118
+INFO:root:faces: 1 at 2022-01-04 11:46:03.815996
+INFO:root:faces: 2 at 2022-01-04 11:46:04.846376
+INFO:root:faces: 1 at 2022-01-04 11:46:04.946313
+INFO:root:faces: 2 at 2022-01-04 11:46:05.246144
+INFO:root:faces: 1 at 2022-01-04 11:46:05.356915
+INFO:root:faces: 2 at 2022-01-04 11:46:05.453855
+INFO:root:faces: 1 at 2022-01-04 11:46:05.889295
+INFO:root:faces: 2 at 2022-01-04 11:46:06.021213
+INFO:root:faces: 1 at 2022-01-04 11:46:06.145137
+INFO:root:faces: 0 at 2022-01-04 11:46:08.385089
+INFO:root:faces: 1 at 2022-01-04 11:46:08.520005
+INFO:root:faces: 0 at 2022-01-04 11:46:08.617945
+INFO:root:faces: 1 at 2022-01-04 11:46:08.906763
+INFO:root:faces: 0 at 2022-01-04 11:46:09.005703
+INFO:root:faces: 1 at 2022-01-04 11:46:09.599386
+ERROR:django.request:Internal Server Error: /user/api/register/student/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\USER\FaceRecognition\user_app\api\views.py", line 101, in post
+    res = send_mail(
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\__init__.py", line 61, in send_mail
+    return mail.send()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\site-packages\django\core\mail\backends\smtp.py", line 69, in open
+    self.connection.login(self.username, self.password)
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 745, in login
+    raise last_exception
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 734, in login
+    (code, resp) = self.auth(
+  File "C:\ProgramData\Anaconda3\envs\virenv\lib\smtplib.py", line 657, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Please log in with your web browser and then try again. Learn more at\n5.7.9  https://support.google.com/mail/?p=WebLoginRequired h204sm37754427wmh.33 - gsmtp')
